@@ -25,7 +25,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
       
       
       <link rel="icon" href="https://docs-cdn.nebula-graph.com.cn/figures/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
     
     
       
@@ -4136,6 +4136,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/8.deploy-nebula-graph-with-lite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用 NebulaGraph Lite 安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" class="md-nav__link">
         
   
@@ -6244,6 +6264,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../14.client/contributed-clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社区贡献的客户端
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7259,6 +7299,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../../k8s-operator/3.operator-management/3.5.cluster-scope-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    管理指定集群
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../k8s-operator/3.operator-management/3.3.upgrade-operator/" class="md-nav__link">
         
   
@@ -7523,6 +7583,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.1.use-local-pv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用本地持久化存储
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.3.configure-pv-reclaim/" class="md-nav__link">
         
   
@@ -7612,6 +7692,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     开启准入控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.7.security/4.7.3.config-deletion-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置删除保护
   </span>
   
 
@@ -7740,6 +7840,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     优化滚动更新中的 Leader 分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.9.advanced/4.9.2.restart-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重启集群
   </span>
   
 
@@ -8367,7 +8487,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 </li>
 </ul>
 <ul>
-<li>已经编译 Exchange。详情请参见<a href="../../ex-ug-compile/">编译 Exchange</a>。本示例中使用 Exchange 3.7.0。</li>
+<li>已经编译 Exchange。详情请参见<a href="../../ex-ug-compile/">编译 Exchange</a>。本示例中使用 Exchange 3.8.0。</li>
 </ul>
 <ul>
 <li>已经安装 Spark。</li>
@@ -8445,7 +8565,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   # Spark 相关配置
   spark: {
     app: {
-      name: NebulaGraph Exchange 3.7.0
+      name: NebulaGraph Exchange 3.8.0
     }
     driver: {
       cores: 1
@@ -8530,6 +8650,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 对 string 类型的 VID 进行哈希化操作。
       # policy:hash
       }
+
+      # 过滤规则。符合过滤规则的数据会被导入NebulaGraph。
+      # filter: &quot;name=&#39;Tom&#39;&quot;
 
       # 批量操作类型，包括 INSERT、UPDATE 和 DELETE。默认为 INSERT。
       #writeMode: INSERT
@@ -8623,6 +8746,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # 指定一个列作为 rank 的源（可选）。
       #ranking: rank
 
+      # 过滤规则。符合过滤规则的数据会被导入NebulaGraph。
+      # filter: &quot;name=&#39;Tom&#39;&quot;
+
       # 批量操作类型，包括 INSERT、UPDATE 和 DELETE。默认为 INSERT。
       #writeMode: INSERT
 
@@ -8673,7 +8799,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <p>JAR 包有两种获取方式：<a href="../../ex-ug-compile/">自行编译</a>或者从 maven 仓库下载。</p>
 </div>
 <p>示例：</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit<span class="w">  </span>--master<span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="w"> </span>--class<span class="w"> </span>com.vesoft.nebula.exchange.Exchange<span class="w">  </span>/root/nebula-exchange/nebula-exchange/target/nebula-exchange_spark_2.4-3.7.0.jar<span class="w">  </span>-c<span class="w"> </span>/root/nebula-exchange/nebula-exchange/target/classes/hbase_application.conf
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit<span class="w">  </span>--master<span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="w"> </span>--class<span class="w"> </span>com.vesoft.nebula.exchange.Exchange<span class="w">  </span>/root/nebula-exchange/nebula-exchange/target/nebula-exchange_spark_2.4-3.8.0.jar<span class="w">  </span>-c<span class="w"> </span>/root/nebula-exchange/nebula-exchange/target/classes/hbase_application.conf
 </code></pre></div>
 <p>用户可以在返回信息中搜索<code>batchSuccess.&lt;tag_name/edge_name&gt;</code>，确认成功的数量。例如<code>batchSuccess.follow: 300</code>。</p>
 <h3 id="4">步骤 4：（可选）验证数据<a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
@@ -8689,7 +8815,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月4日 10:27:39 UTC">2025年8月4日</span>
       
     
   </small>
@@ -8857,5 +8983,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
         <script src="https://www-cdn.nebula-graph.io/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

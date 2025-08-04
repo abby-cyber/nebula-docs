@@ -25,7 +25,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
       
       
       <link rel="icon" href="https://docs-cdn.nebula-graph.com.cn/figures/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
     
     
       
@@ -4136,6 +4136,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/8.deploy-nebula-graph-with-lite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用 NebulaGraph Lite 安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" class="md-nav__link">
         
   
@@ -6129,6 +6149,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../14.client/contributed-clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社区贡献的客户端
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7146,6 +7186,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../3.operator-management/3.5.cluster-scope-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    管理指定集群
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../3.operator-management/3.3.upgrade-operator/" class="md-nav__link">
         
   
@@ -7475,6 +7535,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../4.4.storage-management/4.4.1.use-local-pv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用本地持久化存储
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../4.4.storage-management/4.4.3.configure-pv-reclaim/" class="md-nav__link">
         
   
@@ -7564,6 +7644,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     开启准入控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.7.security/4.7.3.config-deletion-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置删除保护
   </span>
   
 
@@ -7692,6 +7792,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     优化滚动更新中的 Leader 分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../4.9.advanced/4.9.2.restart-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重启集群
   </span>
   
 
@@ -8204,7 +8324,10 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 <h1 id="_1">删除集群<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <p>本文介绍如何删除使用 NebulaGraph Operator 创建的 NebulaGraph 集群。</p>
 <h2 id="_2">使用限制<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p>只支持删除使用 NebulaGraph Operator 创建的 NebulaGraph 集群。</p>
+<ul>
+<li>只支持删除使用 NebulaGraph Operator 创建的NebulaGraph集群。</li>
+<li>无法删除启用了删除保护的集群。更多信息，请参见<a href="../../4.7.security/4.7.3.config-deletion-protection/">配置删除保护</a>。</li>
+</ul>
 <h2 id="kubectl_nebulagraph">使用<code>kubectl</code>删除 NebulaGraph 集群<a class="headerlink" href="#kubectl_nebulagraph" title="Permanent link">&para;</a></h2>
 <ol>
 <li>
@@ -8264,7 +8387,7 @@ nebula-operator<span class="w">   </span>nebula-operator-system<span class="w"> 
 <span class="w">  </span><span class="nt">storageClassName</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">local-sc</span>
 <span class="w">  </span><span class="nt">storaged</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">reg.vesoft-inc.com/xx</span>
-<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.7.5</span><span class="w"> </span><span class="c1"># 集群版本</span>
+<span class="w">  </span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">v1.8.0</span><span class="w"> </span><span class="c1"># 集群版本</span>
 </code></pre></div>
 </li>
 <li>
@@ -8291,7 +8414,7 @@ nebula-operator<span class="w">   </span>nebula-operator-system<span class="w"> 
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月4日 10:27:39 UTC">2025年8月4日</span>
       
     
   </small>
@@ -8459,5 +8582,7 @@ nebula-operator<span class="w">   </span>nebula-operator-system<span class="w"> 
         <script src="https://www-cdn.nebula-graph.io/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

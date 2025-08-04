@@ -25,7 +25,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
       
       
       <link rel="icon" href="https://docs-cdn.nebula-graph.com.cn/figures/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
     
     
       
@@ -4136,6 +4136,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/8.deploy-nebula-graph-with-lite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用 NebulaGraph Lite 安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" class="md-nav__link">
         
   
@@ -6129,6 +6149,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../14.client/contributed-clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社区贡献的客户端
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7146,6 +7186,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../3.operator-management/3.5.cluster-scope-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    管理指定集群
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../3.operator-management/3.3.upgrade-operator/" class="md-nav__link">
         
   
@@ -7487,6 +7547,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../4.4.storage-management/4.4.1.use-local-pv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用本地持久化存储
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../4.4.storage-management/4.4.3.configure-pv-reclaim/" class="md-nav__link">
         
   
@@ -7576,6 +7656,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     开启准入控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.7.security/4.7.3.config-deletion-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置删除保护
   </span>
   
 
@@ -7704,6 +7804,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     优化滚动更新中的 Leader 分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../4.9.advanced/4.9.2.restart-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重启集群
   </span>
   
 
@@ -8255,13 +8375,15 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 </code></pre></div>
 <p>如果需要为 Meta 服务和 Storage 服务配置<code>config</code>，则在<code>spec.metad.config</code>和<code>spec.storaged.config</code>中添加对应的配置项。</p>
 <h2 id="_3">可配置的参数<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>在<code>config</code>字段下可配置的参数详情，请分别参见：
-- <a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta 服务配置参数</a>
-- <a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置参数</a>
-- <a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置参数</a></p>
+<p>在<code>config</code>字段下可配置的参数详情，请分别参见：</p>
+<ul>
+<li><a href="../../../5.configurations-and-logs/1.configurations/2.meta-config/">Meta 服务配置参数</a></li>
+<li><a href="../../../5.configurations-and-logs/1.configurations/4.storage-config/">Storage 服务配置参数</a></li>
+<li><a href="../../../5.configurations-and-logs/1.configurations/3.graph-config/">Graph 服务配置参数</a></li>
+</ul>
 <h2 id="pod">参数更新与 Pod 重启规则<a class="headerlink" href="#pod" title="Permanent link">&para;</a></h2>
 <p>集群服务的配置参数分为两类：一类是必需重启服务才能更新的配置；另一类是可以在服务运行时动态更新的配置，在服务运行时更新的配置不会被持久化，重启服务后，配置会恢复到配置文件中的值。</p>
-<p>关于服务的配置参数是否支持运行时动态更新，请查看上述服务配置参数详情页各个表格中<strong>是否支持运行时动态修改</strong>一列；或者查看 <a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.7.5/doc/user/custom_config.md#dynamic-runtime-flags">Dynamic runtime flags</a>。</p>
+<p>关于服务的配置参数是否支持运行时动态更新，请查看上述服务配置参数详情页各个表格中<strong>是否支持运行时动态修改</strong>一列；或者查看 <a href="https://github.com/vesoft-inc/nebula-operator/blob/v1.8.0/doc/user/custom_config.md#dynamic-runtime-flags">Dynamic runtime flags</a>。</p>
 <p>在更新集群服务的配置时，需要注意以下几点：</p>
 <ul>
 <li>如果<code>config</code>下更新的参数<strong>均为支持运行时动态更新</strong>的参数，则不会触发服务 Pod 的重启，并且配置参数的更新不会被持久化。</li>
@@ -8390,7 +8512,7 @@ nebula-storaged-headless    ClusterIP   None             &lt;none&gt;        977
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月4日 10:27:39 UTC">2025年8月4日</span>
       
     
   </small>
@@ -8558,5 +8680,7 @@ nebula-storaged-headless    ClusterIP   None             &lt;none&gt;        977
         <script src="https://www-cdn.nebula-graph.io/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

@@ -25,7 +25,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
       
       
       <link rel="icon" href="https://docs-cdn.nebula-graph.com.cn/figures/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
     
     
       
@@ -4136,6 +4136,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/8.deploy-nebula-graph-with-lite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用 NebulaGraph Lite 安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" class="md-nav__link">
         
   
@@ -6257,6 +6277,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../14.client/contributed-clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社区贡献的客户端
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7272,6 +7312,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../k8s-operator/3.operator-management/3.5.cluster-scope-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    管理指定集群
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../k8s-operator/3.operator-management/3.3.upgrade-operator/" class="md-nav__link">
         
   
@@ -7536,6 +7596,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.1.use-local-pv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用本地持久化存储
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.3.configure-pv-reclaim/" class="md-nav__link">
         
   
@@ -7625,6 +7705,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     开启准入控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k8s-operator/4.cluster-administration/4.7.security/4.7.3.config-deletion-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置删除保护
   </span>
   
 
@@ -7753,6 +7853,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     优化滚动更新中的 Leader 分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k8s-operator/4.cluster-administration/4.9.advanced/4.9.2.restart-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重启集群
   </span>
   
 
@@ -8798,7 +8918,23 @@ disable_auto_compactions
 </tbody>
 </table>
 <h2 id="memory_tracker">memory tracker 配置<a class="headerlink" href="#memory_tracker" title="Permanent link">&para;</a></h2>
-<p>有关 Memory Tracker 的详细信息，请参见<a href="https://discuss.nebula-graph.com.cn/t/topic/13128">图数据库 NebulaGraph 的内存管理实践之 Memory Tracker</a>。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Memory Tracker 是一个内存管理工具，用于监控和限制内存使用。对于大型查询，Memory Tracker 可以防止 OOM 问题。如果在容器环境中使用 Memory Tracker，需要在 Storage 服务的配置文件中添加相关配置。操作如下：</p>
+<ol>
+<li>创建目录<code>/sys/fs/cgroup/storaged/</code>，添加并配置<code>memory.max</code>。</li>
+<li>
+<p>在<code>etc/nebula-storaged.conf</code>添加以下配置。</p>
+<div class="highlight"><pre><span></span><code>--containerized<span class="o">=</span><span class="nb">true</span>
+--cgroup_v2_controllers<span class="o">=</span>/sys/fs/cgroup/graphd/cgroup.controllers
+--cgroup_v2_memory_stat_path<span class="o">=</span>/sys/fs/cgroup/graphd/memory.stat
+--cgroup_v2_memory_max_path<span class="o">=</span>/sys/fs/cgroup/graphd/memory.max
+--cgroup_v2_memory_current_path<span class="o">=</span>/sys/fs/cgroup/graphd/memory.current
+</code></pre></div>
+</li>
+</ol>
+<p>详细信息，请参见<a href="https://discuss.nebula-graph.com.cn/t/topic/13128">图数据库 NebulaGraph 的内存管理实践之 Memory Tracker</a>。</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -8879,7 +9015,7 @@ disable_auto_compactions
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月4日 10:27:39 UTC">2025年8月4日</span>
       
     
   </small>
@@ -9047,5 +9183,7 @@ disable_auto_compactions
         <script src="https://www-cdn.nebula-graph.io/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

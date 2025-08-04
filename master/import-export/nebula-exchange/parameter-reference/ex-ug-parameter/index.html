@@ -25,7 +25,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
       
       
       <link rel="icon" href="https://docs-cdn.nebula-graph.com.cn/figures/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
     
     
       
@@ -4136,6 +4136,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/8.deploy-nebula-graph-with-lite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用 NebulaGraph Lite 安装
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" class="md-nav__link">
         
   
@@ -6354,6 +6374,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../14.client/contributed-clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    社区贡献的客户端
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7369,6 +7409,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../../k8s-operator/3.operator-management/3.5.cluster-scope-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    管理指定集群
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../k8s-operator/3.operator-management/3.3.upgrade-operator/" class="md-nav__link">
         
   
@@ -7633,6 +7693,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   
     <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.1.use-local-pv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    使用本地持久化存储
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.3.configure-pv-reclaim/" class="md-nav__link">
         
   
@@ -7722,6 +7802,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     开启准入控制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.7.security/4.7.3.config-deletion-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    配置删除保护
   </span>
   
 
@@ -7850,6 +7950,26 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
   
   <span class="md-ellipsis">
     优化滚动更新中的 Leader 分布
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.9.advanced/4.9.2.restart-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    重启集群
   </span>
   
 
@@ -8995,14 +9115,21 @@ check:<span class="w"> </span>the<span class="w"> </span>real<span class="w"> </
 <td align="left">int</td>
 <td align="left"><code>256</code></td>
 <td align="left">是</td>
-<td align="left">单批次写入 NebulaGraph 的最大点数量。</td>
+<td align="left">单批次写入NebulaGraph的最大点数量。</td>
 </tr>
 <tr>
 <td align="left"><code>tags.partition</code></td>
 <td align="left">int</td>
 <td align="left"><code>32</code></td>
 <td align="left">是</td>
-<td align="left">数据写入 NebulaGraph 时需要创建的分区数。如果<code>tags.partition ≤ 1</code>，在 NebulaGraph 中创建的分区数和数据源的分区数相同。</td>
+<td align="left">数据写入NebulaGraph时需要创建的分区数。如果<code>tags.partition ≤ 1</code>，在NebulaGraph中创建的分区数和数据源的分区数相同。</td>
+</tr>
+<tr>
+<td align="left"><code>tags.filter</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">过滤规则。符合过滤规则的数据会被导入NebulaGraph。格式请参见<a href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html#filter(conditionExpr:String):org.apache.spark.sql.Dataset[T]">Dataset</a>。</td>
 </tr>
 </tbody>
 </table>
@@ -9670,14 +9797,21 @@ check:<span class="w"> </span>the<span class="w"> </span>real<span class="w"> </
 <td align="left">int</td>
 <td align="left"><code>256</code></td>
 <td align="left">是</td>
-<td align="left">单批次写入 NebulaGraph 的最大边数量。</td>
+<td align="left">单批次写入NebulaGraph的最大边数量。</td>
 </tr>
 <tr>
 <td align="left"><code>edges.partition</code></td>
 <td align="left">int</td>
 <td align="left"><code>32</code></td>
 <td align="left">是</td>
-<td align="left">数据写入 NebulaGraph 时需要创建的分区数。如果<code>edges.partition ≤ 1</code>，在 NebulaGraph 中创建的分区数和数据源的分区数相同。</td>
+<td align="left">数据写入NebulaGraph时需要创建的分区数。如果<code>edges.partition ≤ 1</code>，在NebulaGraph中创建的分区数和数据源的分区数相同。</td>
+</tr>
+<tr>
+<td align="left"><code>edges.filter</code></td>
+<td align="left">string</td>
+<td align="left">-</td>
+<td align="left">否</td>
+<td align="left">过滤规则。符合过滤规则的数据会被导入NebulaGraph。格式请参见<a href="https://spark.apache.org/docs/latest/api/scala/org/apache/spark/sql/Dataset.html#filter(conditionExpr:String):org.apache.spark.sql.Dataset[T]">Dataset</a>。</td>
 </tr>
 </tbody>
 </table>
@@ -9715,7 +9849,7 @@ check:<span class="w"> </span>the<span class="w"> </span>real<span class="w"> </
   <small>
     
       最后更新:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="2025年8月4日 10:27:39 UTC">2025年8月4日</span>
       
     
   </small>
@@ -9883,5 +10017,7 @@ check:<span class="w"> </span>the<span class="w"> </span>real<span class="w"> </
         <script src="https://www-cdn.nebula-graph.io/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
