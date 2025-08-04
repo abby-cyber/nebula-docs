@@ -24,7 +24,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
       
       
       <link rel="icon" href="https://docs-cdn.nebula-graph.com.cn/figures/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
     
     
       
@@ -4103,6 +4103,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   
     <li class="md-nav__item">
+      <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/8.deploy-nebula-graph-with-lite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install using NebulaGraph Lite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" class="md-nav__link">
         
   
@@ -6231,6 +6251,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../14.client/contributed-clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community contributed clients
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7246,6 +7286,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   
     <li class="md-nav__item">
+      <a href="../../../../k8s-operator/3.operator-management/3.5.cluster-scope-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage specific clusters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../k8s-operator/3.operator-management/3.3.upgrade-operator/" class="md-nav__link">
         
   
@@ -7510,6 +7570,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   
     <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.1.use-local-pv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use local PV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.3.configure-pv-reclaim/" class="md-nav__link">
         
   
@@ -7599,6 +7679,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   <span class="md-ellipsis">
     Enable admission control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.7.security/4.7.3.config-deletion-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure deletion protection
   </span>
   
 
@@ -7727,6 +7827,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   <span class="md-ellipsis">
     Optimize leader transfer in rolling updates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../k8s-operator/4.cluster-administration/4.9.advanced/4.9.2.restart-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Restart clusters
   </span>
   
 
@@ -8464,7 +8584,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
   # Spark configuration
   spark: {
     app: {
-      name: NebulaGraph Exchange 3.7.0
+      name: NebulaGraph Exchange 3.8.0
     }
     driver: {
       cores: 1
@@ -8557,6 +8677,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # policy:hash
       }
 
+      # The filtering rule. The data that matches the filter rule is imported into NebulaGraph.
+      # filter: &quot;name=&#39;Tom&#39;&quot;
+
       # Batch operation types, including INSERT, UPDATE, and DELETE. defaults to INSERT.
       #writeMode: INSERT
 
@@ -8644,6 +8767,9 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
       # (Optional) Specify a column as the source of the rank.
       #ranking: rank
 
+      # The filtering rule. The data that matches the filter rule is imported into NebulaGraph.
+      # filter: &quot;name=&#39;Tom&#39;&quot;
+
       # Batch operation types, including INSERT, UPDATE, and DELETE. defaults to INSERT.
       #writeMode: INSERT
 
@@ -8689,7 +8815,7 @@ nebula&gt; CREATE EDGE serve(start_year int, end_year int);
 <p>JAR packages are available in two ways: <a href="../../ex-ug-compile/">compiled them yourself</a>, or <a href="https://repo1.maven.org/maven2/com/vesoft/nebula-exchange/">download</a> the compiled <code>.jar</code> file directly.</p>
 </div>
 <p>For example:</p>
-<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit<span class="w">  </span>--master<span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="w"> </span>--class<span class="w"> </span>com.vesoft.nebula.exchange.Exchange<span class="w">  </span>/root/nebula-exchange/nebula-exchange/target/nebula-exchange_spark_2.4-3.7.0.jar<span class="w">  </span>-c<span class="w"> </span>/root/nebula-exchange/nebula-exchange/target/classes/hive_application.conf<span class="w"> </span>-h
+<div class="highlight"><pre><span></span><code><span class="si">${</span><span class="nv">SPARK_HOME</span><span class="si">}</span>/bin/spark-submit<span class="w">  </span>--master<span class="w"> </span><span class="s2">&quot;local&quot;</span><span class="w"> </span>--class<span class="w"> </span>com.vesoft.nebula.exchange.Exchange<span class="w">  </span>/root/nebula-exchange/nebula-exchange/target/nebula-exchange_spark_2.4-3.8.0.jar<span class="w">  </span>-c<span class="w"> </span>/root/nebula-exchange/nebula-exchange/target/classes/hive_application.conf<span class="w"> </span>-h
 </code></pre></div>
 <p>You can search for <code>batchSuccess.&lt;tag_name/edge_name&gt;</code> in the command output to check the number of successes. For example, <code>batchSuccess.follow: 300</code>.</p>
 <h4 id="access_hdfs_data_with_kerberos_certification">Access HDFS data with Kerberos certification<a class="headerlink" href="#access_hdfs_data_with_kerberos_certification" title="Permanent link">&para;</a></h4>
@@ -8732,7 +8858,7 @@ exchange.jar<span class="w"> </span>-c<span class="w"> </span>xx.conf
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">February 27, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 26, 2024 02:52:47 UTC">April 26, 2024</span>
       
     
   </small>
@@ -8975,5 +9101,7 @@ exchange.jar<span class="w"> </span>-c<span class="w"> </span>xx.conf
         <script src="https://www-cdn.nebula-graph.io/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>

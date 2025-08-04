@@ -24,7 +24,7 @@ https://github.com/mkdocs/mkdocs/blob/master/mkdocs/themes/mkdocs/main.html -->
       
       
       <link rel="icon" href="https://docs-cdn.nebula-graph.com.cn/figures/favicon.ico">
-      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.4.6">
     
     
       
@@ -4103,6 +4103,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   
     <li class="md-nav__item">
+      <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/8.deploy-nebula-graph-with-lite/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Install using NebulaGraph Lite
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../4.deployment-and-installation/2.compile-and-install-nebula-graph/6.deploy-nebula-graph-with-peripherals/" class="md-nav__link">
         
   
@@ -6231,6 +6251,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
 
               
             
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../14.client/contributed-clients/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Community contributed clients
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -7246,6 +7286,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   
     <li class="md-nav__item">
+      <a href="../../../k8s-operator/3.operator-management/3.5.cluster-scope-config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Manage specific clusters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../k8s-operator/3.operator-management/3.3.upgrade-operator/" class="md-nav__link">
         
   
@@ -7510,6 +7570,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   
     <li class="md-nav__item">
+      <a href="../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.1.use-local-pv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Use local PV
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../k8s-operator/4.cluster-administration/4.4.storage-management/4.4.3.configure-pv-reclaim/" class="md-nav__link">
         
   
@@ -7599,6 +7679,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   <span class="md-ellipsis">
     Enable admission control
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k8s-operator/4.cluster-administration/4.7.security/4.7.3.config-deletion-protection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configure deletion protection
   </span>
   
 
@@ -7727,6 +7827,26 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   
   <span class="md-ellipsis">
     Optimize leader transfer in rolling updates
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../k8s-operator/4.cluster-administration/4.9.advanced/4.9.2.restart-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Restart clusters
   </span>
   
 
@@ -8380,7 +8500,7 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
 <tr>
 <td><code>log_dir</code></td>
 <td><code>logs</code></td>
-<td>The directory that stores the Meta Service log. It is recommended to put logs on a different hard disk from the data.</td>
+<td>The directory that stores the Graph service log. It is recommended to put logs on a different hard disk from the data.</td>
 <td>No</td>
 </tr>
 <tr>
@@ -8634,9 +8754,24 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
 </tbody>
 </table>
 <h2 id="metrics_configurations">Metrics configurations<a class="headerlink" href="#metrics_configurations" title="Permanent link">&para;</a></h2>
-<p>| Name | Predefined value | Description |Whether supports runtime dynamic modifications|
-| - | - | - |
-| <code>enable_space_level_metrics</code> | <code>false</code> | Enable or disable space-level metrics. Such metric names contain the name of the graph space that it monitors, for example, <code>query_latency_us{space=basketballplayer}.avg.3600</code>. You can view the supported metrics with the <code>curl</code> command. For more information, see <a href="../../../6.monitor-and-metrics/1.query-performance-metrics/">Query NebulaGraph metrics</a>. | No|</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Predefined value</th>
+<th>Description</th>
+<th>Whether supports runtime dynamic modifications</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>enable_space_level_metrics</code></td>
+<td><code>false</code></td>
+<td>Enable or disable space-level metrics. Such metric names contain the name of the graph space that it monitors, for example, <code>query_latency_us{space=basketballplayer}.avg.3600</code>. You can view the supported metrics with the <code>curl</code> command. For more information, see <a href="../../../6.monitor-and-metrics/1.query-performance-metrics/">Query NebulaGraph metrics</a>.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
 <h2 id="session_configurations">Session configurations<a class="headerlink" href="#session_configurations" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
@@ -8686,6 +8821,23 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
 </tbody>
 </table>
 <h2 id="memory_tracker_configurations">Memory tracker configurations<a class="headerlink" href="#memory_tracker_configurations" title="Permanent link">&para;</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Memory Tracker is a memory management tool designed to monitor and limit memory usage. For large-scale queries, Memory Tracker can prevent Out Of Memory (OOM) issues. If you're using Memory Tracker in a containerized environment, you need to add the relevant configurations to the configuration file of the Graph service.</p>
+<ol>
+<li>Create the directory <code>/sys/fs/cgroup/graphd/</code>, and then add and configure the <code>memory.max</code> file under the directory.</li>
+<li>
+<p>Add the following configurations to <code>etc/nebula-graphd.conf</code>.</p>
+<div class="highlight"><pre><span></span><code>--containerized<span class="o">=</span><span class="nb">true</span>
+--cgroup_v2_controllers<span class="o">=</span>/sys/fs/cgroup/graphd/cgroup.controllers
+--cgroup_v2_memory_stat_path<span class="o">=</span>/sys/fs/cgroup/graphd/memory.stat
+--cgroup_v2_memory_max_path<span class="o">=</span>/sys/fs/cgroup/graphd/memory.max
+--cgroup_v2_memory_current_path<span class="o">=</span>/sys/fs/cgroup/graphd/memory.current
+</code></pre></div>
+</li>
+</ol>
+<p>For more details, see <a href="https://www.nebula-graph.io/posts/memory-tracker-practices">Memory Tracker: Memory Management Practice in NebulaGraph Database</a>.</p>
+</div>
 <table>
 <thead>
 <tr>
@@ -8777,7 +8929,7 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">January 30, 2024</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date" title="April 19, 2024 06:21:30 UTC">April 19, 2024</span>
       
     
   </small>
@@ -9020,5 +9172,7 @@ Document versions starting from 3.6.0 contain Community Edition features only. F
         <script src="https://www-cdn.nebula-graph.io/nebula-docs/nebula-docs.7e772ed81c779cacbefc.js"></script>
       
     
-  <script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
 </html>
