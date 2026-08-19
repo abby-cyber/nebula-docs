@@ -40,7 +40,7 @@ jobs:
           # mike delete v3.0.2 -p
           for attempt in 1 2 3; do
             git fetch origin gh-pages
-            if mike --rebase deploy 3.0.2 -p; then
+            if mike deploy --rebase 3.0.2 -p; then
               mike list
               exit 0
             fi
